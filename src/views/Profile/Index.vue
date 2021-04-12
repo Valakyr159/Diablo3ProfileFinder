@@ -3,14 +3,15 @@
     <BaseLoading v-if="isLoading"/>
     <template v-if="profileData !== null">
       <MainBlock :profile-data="profileData"/>
+      <ArtisansBlock :artisans-data="artisansData"/>
     </template>
-    <h1>Profile View</h1>
   </div>
 </template>
 
 <script>
 import BaseLoading from '@/components/BaseLoading'
 import MainBlock from './MainBlock/Index'
+import ArtisansBlock from './ArtisansBlock/Index'
 import { getApiAccount } from '@/api/search'
 // mixin
 import setError from '@/mixins/setError'
@@ -18,17 +19,28 @@ import setError from '@/mixins/setError'
 export default {
   name: 'ProfileView',
   // Dando de alta al mixin
-  mixins: {
-    setError
-  },
+  mixins: [setError],
   components: {
     BaseLoading,
+    ArtisansBlock,
     MainBlock
   },
   data () {
     return {
       isLoading: false,
       profileData: null
+    }
+  },
+  computed: {
+    artisansData () {
+      return {
+        blacksmith: this.profileData.blacksmith,
+        blacksmithHardcore: this.profileData.blacksmithHardcore,
+        jeweler: this.profileData.jeweler,
+        jewelerHardcore: this.profileData.jewelerHardcore,
+        mystic: this.profileData.mystic,
+        mysticHardcore: this.profileData.mysticHardcore
+      }
     }
   },
   // Created() {} es lo primero que se ejecuta cuando la página comienza a cargar
@@ -40,6 +52,12 @@ export default {
     this.fetchData(region, account)
   },
   methods: {
+    /**
+   * Obtener los datos de la API
+   * Guardarlos en 'profileData'
+   * @param region {String}
+   * @param account {String}
+   */
     fetchData (region, account) {
       // Llamada API
       // Llamada a la API con los tatos necesarios

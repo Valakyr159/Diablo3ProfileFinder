@@ -8,8 +8,8 @@ import { post } from 'axios'
 // Como dice la documentación, tienes un máxumo de llamadas por segundo y por hora a la API.
 
 // Estos datos deberían ser privados
-const clientId = '5bf1a17a1cc54de4a7b2e2af29718d60'
-const clientSecret = 'Kek4zuMrG91lajXsolVcfnzT6AXV8z0R'
+const clientId = process.env.VUE_APP_CLIENT_ID
+const clientSecret = process.env.VUE_APP_CLIENT_SECRET
 
 const region = 'us'
 const API_URL = `https://${region}.battle.net/oauth/token`

@@ -21,6 +21,14 @@
   font-family "DiabloHeavy", sans-serif
 
 // -------------------------
+// Utils
+// -------------------------
+
+.hover-cursor-pointer
+  &:hover
+    cursor pointer
+
+// -------------------------
 // Sprite image . Heroes faces
 // -------------------------
 
@@ -36,42 +44,42 @@
   width 136px
   height 106px
 
-.hero-barbarian,
+.hero-barbarian
   &.male
     background-position 0 0
 
   &.female
     background-position 100% 0
 
-.hero-witch-doctor,
+.hero-witch-doctor
   &.male
     background-position 0 16.538462%
 
   &.female
     background-position 100% 16.538462%
 
-.hero-demon-hunter,
+.hero-demon-hunter
   &.male
     background-position 0 33.247754%
 
   &.female
     background-position 100% 33.247754%
 
-.hero-wizard,
+.hero-wizard
   &.male
     background-position 0 50%
 
   &.female
     background-position 100% 50%
 
-.hero-monk,
+.hero-monk
   &.male
     background-position 0 66.666667%
 
   &.female
     background-position 100% 66.666667%
 
-.hero-necromancer,
+.hero-necromancer
   &.male
     background-position 0 83.333333%
 
@@ -122,6 +130,70 @@
       background-position 50px 0
     &.done
       background-position 50px 57px
+
+// ------------
+// Resources
+// ------------
+
+.resource
+  .resource-icon
+    background-image url('../img/resources.png')
+    width 50px
+    height 50px
+
+    &.resource-mana
+      background-position: 0 -50px
+
+    &.resource-fury
+      background-position: -50px 0
+
+    &.resource-hatred-discipline
+      background-position: -100px 0
+
+    &.resource-spirit
+      background-position: -50px -50px
+
+    &.resource-arcane-power
+      background-position: -100px -50px
+
+    &.resource-wrath
+      background-position: 0px -100px
+
+    &.resource-essence
+      background-position: -50px -100px
+
+// --------------
+// Active Skills
+// --------------
+
+.active-skills
+  .skills
+    .slot
+      display block
+      width 22px
+      height 22px
+      background url("../img/skill-overlays.png") 0 0
+      position absolute
+      top -5px
+      left 5px
+
+      &.slot-1
+        background-position: 0 -1px
+
+      &.slot-2
+        background-position: -21px -1px
+
+      &.slot-3
+        background-position: 0 -23px
+
+      &.slot-4
+        background-position: -23px -23px
+
+      &.slot-5
+        background-position: 0 -46px
+
+      &.slot-6
+        background-position: -23px -46px
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px)
