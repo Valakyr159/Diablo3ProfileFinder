@@ -21,3 +21,8 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+  .header-bar span
+        color #e8dcc2
+</style>
