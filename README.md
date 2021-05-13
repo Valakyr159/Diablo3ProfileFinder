@@ -1,6 +1,6 @@
 # diablo3
 
-Website hosted on netlify @ diablo3-valakyr.netlify.app
+[Project hosted on netlify](https://diablo3-valakyr.netlify.app)
 
 ## Project setup
 ```
